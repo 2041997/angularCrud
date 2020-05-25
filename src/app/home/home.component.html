@@ -1,0 +1,38 @@
+<form (ngSubmit)="onSubmit()">
+<div class="row justify-content-center">
+    <div class="col-md-4">
+        <div class="form-group">
+            <label>Frist Name</label>
+              <input type="text" class="form-control" [(ngModel)]="home.fristname" name="fristname">
+        </div>
+        <div class="form-group">
+            <label>Last Name</label>
+              <input type="text" class="form-control" [(ngModel)]="home.lastname" name="lastname">
+        </div>
+        <div class="form-group">
+            <label>Email</label>
+              <input type="email" class="form-control" [(ngModel)]="home.email" name="email">
+        </div>
+        <button class="btn btn-primary">{{title}}</button>
+
+    </div>
+
+</div>
+</form>
+<table border="1" align="center">
+    <tr>
+        <td> Frist Name</td>
+        <td> last name</td>
+        <td> Emails </td>
+        <td> Delete</td>
+        <td> Edit</td>
+
+    </tr>
+    <tr *ngFor="let obj of Array ; let j=index">
+        <td> {{obj.fristname}}</td>
+        <td>{{obj.lastname}}</td>
+        <td>{{obj.email}}</td>
+        <td><a class="btn text-white btn-danger" (click)="Delete(j)">Delete</a></td>
+        <td><a class="btn text-white btn-primary" (click)="Edit(obj,j)">Edit</a></td>
+    </tr>
+</table>
